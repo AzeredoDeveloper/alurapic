@@ -5,6 +5,7 @@ const URL_API = 'http://localhost:3000'
 
 @Injectable({
   providedIn: 'root'
+  
 })
 export class AuthService {
 
