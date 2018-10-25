@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { Router } from '@angular/router';
-import { PlataformDetectorService } from 'src/app/core/auth/plataform/plataform-detector.service';
+import { PlataformDetectorService } from 'src/app/core/plataform/plataform-detector.service';
 
 @Component({
   templateUrl: './signin.component.html',
