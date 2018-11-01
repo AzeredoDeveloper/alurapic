@@ -1,14 +1,8 @@
 import { NgModule } from '@angular/core';
-import { DarkenOnHoverComponent } from './darken-on-hover.component';
+import { DarkenOnHoverDirective } from './darken-on-hover.directive';
 
 @NgModule({
-    declarations: [
-        DarkenOnHoverComponent
-    ],
-    exports: [
-        DarkenOnHoverComponent
-    ]    
+    declarations: [ DarkenOnHoverDirective ],
+    exports: [ DarkenOnHoverDirective ]
 })
-export class DarkenOnHoverModule {
-
-}
+export class DarkenOnHoverModule { }

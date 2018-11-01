@@ -5,16 +5,17 @@ import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
-import { SigninComponent } from './home/signin/signin.component';
-import { AuthGuardService } from './core/auth/auth-guard.service';
-import { SignupComponent } from './home/signup/signup.component';
 
 const routes: Routes = [
-    { 
-        path: '', 
-        component: SigninComponent,
-        canActivate: [AuthGuardService]
+    {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'home'
     },
+    { 
+        path: 'home',
+        loadChildren: './home/home.module#HomeModule'
+    },              
     { 
         path: 'user/:userName', 
         component: PhotoListComponent,
@@ -27,10 +28,6 @@ const routes: Routes = [
         component: PhotoFormComponent 
     },
     { 
-        path: 'signup', 
-        component: SignupComponent 
-    },
-    { 
         path: '**', 
         component: NotFoundComponent 
     }  
@@ -38,7 +35,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [ 
-        RouterModule.forRoot(routes) 
+        RouterModule.forRoot(routes, { useHash: true } ) 
     ],
     exports: [ RouterModule ]
 })
